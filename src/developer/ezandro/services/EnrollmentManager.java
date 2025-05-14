@@ -15,7 +15,8 @@ public class EnrollmentManager {
 
     public Enrollment enrollStudent(Student student, Course course) {
         boolean alreadyEnrolled = this.getAllEnrollments().stream()
-                .anyMatch(enrollment -> enrollment.getStudent().getId() == student.getId() && enrollment.getCourse().getId() == course.getId());
+                .anyMatch(enrollment -> enrollment.getStudent().getId() == student.getId()
+                        && enrollment.getCourse().getId() == course.getId());
 
         if (alreadyEnrolled) {
             return null;
