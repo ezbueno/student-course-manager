@@ -53,12 +53,18 @@ public class MenuHandler {
 
     private static void handleSelectedOption(int option) {
         switch (option) {
-            case 1 -> handleStudentsMenu();
-            case 2 -> handleCoursesMenu();
-            case 3 -> handleEnrollmentsMenu();
-            case 4 -> handleViewReports();
-            case 5 -> exitProgram();
-            default -> System.out.println(MessageProvider.MAIN_MENU_INVALID_OPTION);
+            case 1 ->
+                    handleStudentsMenu();
+            case 2 ->
+                    handleCoursesMenu();
+            case 3 ->
+                    handleEnrollmentsMenu();
+            case 4 ->
+                    handleViewReports();
+            case 5 ->
+                    exitProgram();
+            default ->
+                    System.out.println(MessageProvider.MAIN_MENU_INVALID_OPTION);
         }
     }
 
@@ -76,14 +82,18 @@ public class MenuHandler {
                 int option = SCANNER.nextInt();
 
                 switch (option) {
-                    case 1 -> handleAddStudent();
-                    case 2 -> handleListAllStudents();
-                    case 3 -> handleFindStudentById();
+                    case 1 ->
+                            handleAddStudent();
+                    case 2 ->
+                            handleListAllStudents();
+                    case 3 ->
+                            handleFindStudentById();
                     case 4 -> {
                         isValidOption = false;
                         MessageProvider.displayMainMenu();
                     }
-                    default -> System.out.println(MessageProvider.SUBMENU_STUDENT_INVALID_OPTION);
+                    default ->
+                            System.out.println(MessageProvider.SUBMENU_STUDENT_INVALID_OPTION);
                 }
 
             } catch (InputMismatchException | IllegalArgumentException _) {
@@ -159,14 +169,18 @@ public class MenuHandler {
                 int option = SCANNER.nextInt();
 
                 switch (option) {
-                    case 1 -> handleAddCourse();
-                    case 2 -> handleListAllCourses();
-                    case 3 -> handleFindCourseById();
+                    case 1 ->
+                            handleAddCourse();
+                    case 2 ->
+                            handleListAllCourses();
+                    case 3 ->
+                            handleFindCourseById();
                     case 4 -> {
                         isValidOption = false;
                         MessageProvider.displayMainMenu();
                     }
-                    default -> System.out.println(MessageProvider.SUBMENU_COURSE_INVALID_OPTION);
+                    default ->
+                            System.out.println(MessageProvider.SUBMENU_COURSE_INVALID_OPTION);
                 }
 
             } catch (InputMismatchException | IllegalArgumentException _) {
@@ -242,14 +256,18 @@ public class MenuHandler {
                 int option = SCANNER.nextInt();
 
                 switch (option) {
-                    case 1 -> handleAddEnrollment();
-                    case 2 -> handleViewEnrollments();
-                    case 3 -> handleFindEnrollmentById();
+                    case 1 ->
+                            handleAddEnrollment();
+                    case 2 ->
+                            handleViewEnrollments();
+                    case 3 ->
+                            handleFindEnrollmentById();
                     case 4 -> {
                         isValidOption = false;
                         MessageProvider.displayMainMenu();
                     }
-                    default -> System.out.println(MessageProvider.SUBMENU_ENROLLMENT_INVALID_OPTION);
+                    default ->
+                            System.out.println(MessageProvider.SUBMENU_ENROLLMENT_INVALID_OPTION);
                 }
 
             } catch (InputMismatchException | IllegalArgumentException _) {
@@ -273,7 +291,7 @@ public class MenuHandler {
             System.out.println(MessageProvider.ENROLLMENT_SUCCESS);
             System.out.println(MessageProvider.getEnrollmentCreationSuccessMessage());
 
-        } catch (StudentAlreadyEnrolledException e) {
+        } catch (StudentAlreadyEnrolledException _) {
             System.out.println(MessageProvider.STUDENT_ALREADY_ENROLLED);
         }
 
@@ -334,14 +352,18 @@ public class MenuHandler {
                 int option = SCANNER.nextInt();
 
                 switch (option) {
-                    case 1 -> handleViewAllCoursesWithEnrolledStudents();
-                    case 2 -> handleViewAllStudentsWithEnrolledCourses();
-                    case 3 -> handleViewEnrollmentsByStudentId();
+                    case 1 ->
+                            handleViewAllCoursesWithEnrolledStudents();
+                    case 2 ->
+                            handleViewAllStudentsWithEnrolledCourses();
+                    case 3 ->
+                            handleViewEnrollmentsByStudentId();
                     case 4 -> {
                         isValidOption = false;
                         MessageProvider.displayMainMenu();
                     }
-                    default -> System.out.println(MessageProvider.SUBMENU_REPORTS_INVALID_OPTION);
+                    default ->
+                            System.out.println(MessageProvider.SUBMENU_REPORTS_INVALID_OPTION);
                 }
 
             } catch (InputMismatchException | IllegalArgumentException _) {
@@ -352,7 +374,7 @@ public class MenuHandler {
     }
 
     private static void handleViewAllCoursesWithEnrolledStudents() {
-        Map<Course, List<Enrollment>> courseEnrollments = ENROLLMENT_MANAGER.getCoursesWithEnrollments(); // Método atualizado
+        Map<Course, List<Enrollment>> courseEnrollments = ENROLLMENT_MANAGER.getCoursesWithEnrollments();
 
         if (courseEnrollments.isEmpty()) {
             System.out.println(MessageProvider.NO_ENROLLMENTS_FOUND);
@@ -394,10 +416,9 @@ public class MenuHandler {
 
             System.out.println(MessageProvider.ENROLLED_COURSES_HEADER);
 
-            courses.forEach(course ->
-                    System.out.printf(MessageProvider.COURSE_ENTRY_FORMAT + "%n",
-                            course.getName(),
-                            course.getId()));
+            courses.forEach(course -> System.out.printf(MessageProvider.COURSE_ENTRY_FORMAT + "%n",
+                    course.getName(),
+                    course.getId()));
 
             System.out.println();
         });
@@ -430,7 +451,8 @@ public class MenuHandler {
                     System.out.println(MessageProvider.NO_ENROLLMENTS_FOR_STUDENT);
                 } else {
                     System.out.println(MessageProvider.ENROLLMENTS_FOR_STUDENT_HEADER);
-                    System.out.printf("%n" + MessageProvider.STUDENT_ENTRY_FORMAT + "%n", student.getName(), student.getId());                    System.out.println(MessageProvider.ENROLLED_COURSES_HEADER);
+                    System.out.printf("%n" + MessageProvider.STUDENT_ENTRY_FORMAT + "%n", student.getName(), student.getId());
+                    System.out.println(MessageProvider.ENROLLED_COURSES_HEADER);
 
                     for (Enrollment enrollment : enrollments) {
                         Course course = enrollment.getCourse();
