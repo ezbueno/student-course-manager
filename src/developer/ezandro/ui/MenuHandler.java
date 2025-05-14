@@ -413,7 +413,7 @@ public class MenuHandler {
 
         while (isValidId) {
             try {
-                System.out.print(MessageProvider.INPUT_STUDENT_ID_PROMPT);
+                System.out.println(MessageProvider.INPUT_STUDENT_ID_PROMPT);
                 studentId = SCANNER.nextInt();
 
                 if (studentId == 0) {
