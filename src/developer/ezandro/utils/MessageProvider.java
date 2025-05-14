@@ -75,9 +75,11 @@ public class MessageProvider {
     // === Headers ===
     // ========================
     public static final String STUDENT_LIST_HEADER = """
+            
             ╔══════════════════════════╗
             ║      LIST OF STUDENTS    ║
-            ╚══════════════════════════╝""";
+            ╚══════════════════════════╝
+            """;
 
     public static final String COURSE_LIST_HEADER = """
             
