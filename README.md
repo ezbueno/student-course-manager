@@ -6,10 +6,11 @@ A simple system developed in Java to manage students, courses, and enrollments. 
 
 **Student Course Manager** is a basic educational management system developed using pure Java and object-oriented programming (OOP) principles. It allows users to manage the following operations through a text-based menu interface:
 
-- Register, list, and search for students.
-- Register, list, and search for courses.
-- Enroll students into courses.
-- View and remove enrollments.
+1. **Manage Students** – Register, list, and search for students.
+2. **Manage Courses** – Register, list, and search for courses.
+3. **Enroll Students in Courses** – Enroll students into courses.
+4. **View Enrollments** – View the list of student enrollments.
+5. **Exit** - Exit the system.
 
 ## 🧠 Features
 
