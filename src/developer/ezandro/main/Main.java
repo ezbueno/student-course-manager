@@ -1,4 +1,4 @@
-package main;
+package developer.ezandro.main;
 
 import developer.ezandro.ui.MenuHandler;
 
