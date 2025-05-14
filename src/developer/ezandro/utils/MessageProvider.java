@@ -19,7 +19,7 @@ public class MessageProvider {
     public static final String STUDENT_NOT_FOUND = "Student with ID: %s not found.";
     public static final String NO_REGISTERED_STUDENTS = "No students registered yet. Use 'Add Student' to begin.";
     public static final String STUDENT_REGISTRATION_SUCCESS = "Student registered successfully.";
-    public static final String INPUT_STUDENT_ID_PROMPT = "Enter the student ID: ";
+    public static final String INPUT_STUDENT_ID_PROMPT = "Enter the student ID:";
     public static final String INPUT_STUDENT_NAME_PROMPT = "Enter the student's full name: ";
     public static final String INPUT_STUDENT_EMAIL_PROMPT = "Enter the student's email address (e.g., user@domain.com): ";
     public static final String EMAIL_REGEX = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
@@ -31,7 +31,7 @@ public class MessageProvider {
     public static final String COURSE_NOT_FOUND = "Course with ID: %s not found.";
     public static final String NO_REGISTERED_COURSES = "No courses registered yet. Use 'Add Course' to begin.";
     public static final String COURSE_REGISTRATION_SUCCESS = "Course registered successfully.";
-    public static final String INPUT_COURSE_ID_PROMPT = "Enter the course ID: ";
+    public static final String INPUT_COURSE_ID_PROMPT = "Enter the course ID:";
     public static final String INPUT_COURSE_NAME_PROMPT = "Enter the course name: ";
     public static final String INPUT_COURSE_DESCRIPTION_PROMPT = "Enter the course description: ";
     public static final String INPUT_COURSE_WORKLOAD_PROMPT = "Enter the course workload in hours (e.g., 40): ";
@@ -115,9 +115,11 @@ public class MessageProvider {
             """;
 
     public static final String PROGRAM_EXIT_MESSAGE = """
+            
             === Program terminated ===
             Thank you for using Student Course Manager.
-            Have a great day!""";
+            Have a great day!
+            """;
 
     // ========================
     // === Menus ===
